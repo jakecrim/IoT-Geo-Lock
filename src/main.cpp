@@ -1,4 +1,4 @@
-/* espHelloWorld.cc */
+/* main.cpp */
 
 
 #include "AutoLocker.h"
@@ -12,7 +12,7 @@ using namespace std;
 #define SERVO_PIN_0 23
 
 // ************************************* //
-//			WiFi & MQTT Definitions		 //
+//  WiFi & MQTT Definitions              //
 //	Description: Usernames, passwords,	 //
 //	addresses, keys, secret formulas...	 //
 // ************************************* //
@@ -112,6 +112,7 @@ void WiFi_connect();
 //	to WiFi until successful.	 		 //
 // ************************************* //
 void WiFi_connect(){
+	Serial.println("WiFi Disconnected...");
 	WiFi.begin(WIFI_SSID, WIFI_PASS);
 	WiFi.setSleep(false);
 	while (WiFi.status() != WL_CONNECTED){
