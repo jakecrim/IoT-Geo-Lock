@@ -76,6 +76,8 @@ void lock_servo_set(Servo servo1, int state){
 //			Servo Control Loop   		 //
 //	Description: Allows for servo 		 //
 //	control by hand with petentiometer.	 // 
+// CURRENTLY UNUSED BUT USEFUL AS 	     //
+//  REFERENCE FOR SERVO CONTROL			 //
 // ************************************* //
 void servo_control_loop(Servo &servo){
 	

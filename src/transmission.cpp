@@ -1,6 +1,7 @@
 #include "transmission.h"
 #include "Servo.h"
 
+// ***ADD THIS TO HEADER LATER
 //Creating a WiFi Client instance
 WiFiClient client;
 // Setup MQTT For Adafruit IO
@@ -10,7 +11,6 @@ Adafruit_MQTT_Subscribe ifttt_notification = Adafruit_MQTT_Subscribe(&mqtt, AIO_
 
 
 // WiFi Connect	
-
 void WiFi_connect()
 {
 	Serial.println("WiFi Disconnected...");
@@ -76,7 +76,7 @@ void MQTT_loop()
 	
 	while(1)
 	{
-		// Check to see if MQTT is connected, if not, it will connec
+		// Check to see if MQTT is connected, if not, it will connect
 		MQTT_connect();
 		// Check subscription information to see if any actions need completed.
 		while ((subscription = mqtt.readSubscription(5000)))
@@ -91,7 +91,6 @@ void MQTT_loop()
 					// Set state to equal 1 since we have "left home" and want to set servo to LOCKED
 					lock_state = 1;
 					// Send the servo obj and lock state to the position set function
-					// lock_servo_set(servo1, lock_state);
 					lock_servo_set(servo1, lock_state);
 				}
 				else if (!strcmp((char*) ifttt_notification.lastread, "arrived"))
