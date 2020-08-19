@@ -12,13 +12,15 @@ int main(void)
 	delay( 1000 );
 
 	// Connect to the defined WiFi Network
-	WiFi_connect();
+	wifi_Open();
 
 	servos_Open();
 	
-	// Go to MQTT_loop and stay there forevor waiting for updates from the cloud.
-	MQTT_loop();
+	// Go to mqtt_Task() and stay there forevor waiting for updates from the cloud.
+	// as much as I'd like to run all this freeRTOS style it just isn't necessary yet
+	mqtt_Task();
 
+	// if all goes well, we will never end up in loop()
 }
 
 
@@ -31,7 +33,7 @@ void setup()
 
 void loop() 
 {       
-	Serial.println("Arrived in Loop");
+	Serial.println("Arrived in Loop should NOT be here... \n");
 	delay(1000);
 }
 

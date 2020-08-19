@@ -38,8 +38,6 @@ void Servo :: servo_init()
 
 void servos_Open()
 {
-	// Servo servo1;
-	// servo1.servo_init();
 	printf("DOES NOTHING RN \n");
 }
 
@@ -71,6 +69,9 @@ void lock_servo_set(Servo servo1, int state){
 	Serial.println("Detaching pin...");
 	ledcDetachPin(SERVO_PIN_0);
 }
+
+
+
 
 // ************************************* //
 //			Servo Control Loop   		 //
