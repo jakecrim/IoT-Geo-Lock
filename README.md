@@ -1,5 +1,5 @@
 # IoT-Geo-Lock
-> Automatic locking and unlocking a deadbolt dependant on my arriving or departing at the apartment.
+> Automatic locking and unlocking a deadbolt dependant on my arriving or departing from a configurable location.
 
 
 # Usage
